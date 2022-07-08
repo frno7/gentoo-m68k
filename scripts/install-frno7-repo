@@ -1,0 +1,8 @@
+#!/bin/bash
+
+emerge -j4 -v app-eselect/eselect-repository
+eselect repository add frno7 git https://github.com/frno7/gentoo.overlay
+emaint sync -r frno7
+
+mkdir /usr/m68k-elf/etc/portage/repos.conf
+ln -s /etc/portage/repos.conf/eselect-repo.conf /usr/m68k-elf/etc/portage/repos.conf/eselect-repo.conf
